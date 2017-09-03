@@ -3,4 +3,4 @@ Proof of Life QR that proves you are still alive at a certain moment using the l
 
 # DEMO (optimized for smartphone browsers):
 
-https://rawgit.com/qurihara/proof_of_life_qr/master/pol.html
+https://qurihara.github.io/proof_of_life_qr/pol.html
