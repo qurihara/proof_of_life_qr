@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Proof of Life QR</title>
+    <header name = "Access-Control-Allow-Origin" value = "*" />
+    <link rel="stylesheet" href="https://cdn.rawgit.com/mrmrs/fluidity/a969a31e/css/fluidity.min.css">
+  </head>
+  <body bgcolor="#000000" text="#ffffff" style="font-family: fantasy; font:bold;">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <div Align="center">
+    <h1>Proof of Life QR</h1>
+    <div id="header">
+      Connecting...
+    </div>
+    <div id="footer"></div>
+    </div>
+    <script>
+
+    var prev = '';
+    function getqr(){
+      var url = 'https://blockchain.info/ja/q/latesthash';
+      $.ajax ({
+        url : url,
+        type : 'get',
+        timeout : 5000,
+        success : function ( contents ) {
+          console.log(contents);
+          if (contents !== prev){
+            var d = new Date();
+            var rurl = 'https://blockchain.info/ja/search?search=' + contents;
+            var html = '<img width="100%" src="https://api.qrserver.com/v1/create-qr-code/?data='
+            + rurl + '&size=200x200" alt="Proof of Life QR" />'
+            //var hash = '<p style="font-size: small"><a href="' + rurl + '">'+contents+'</a>';
+            var hash = '<p width="100%" style="font-size: medium">'+contents+'<br><a href="' + rurl + '">check</a>';
+            document.getElementById('header').innerHTML = d + '<br>'+ html
+            + '<br>'+hash+'</p>';
+            prev = contents;
+          }
+        },
+        error : function ( request, errorMessage ) {
+          console.log('Network error ' + errorMessage);
+          if (prev === ''){
+            document.getElementById('header').innerHTML = 'network error';            
+          }
+        }
+      });
+      setTimeout(getqr, 300000);
+    }
+    getqr();
+
+    </script>
+  </body>
+</html>
