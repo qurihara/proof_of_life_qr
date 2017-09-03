@@ -35,16 +35,17 @@
             document.getElementById('header').innerHTML = d + '<br>'+ html
             + '<br>'+hash+'</p>';
             prev = contents;
+            setTimeout(getqr, 300000);
           }
         },
         error : function ( request, errorMessage ) {
-          console.log('Network error ' + errorMessage);
+          console.log('Network error. Reconnecting.. ' + errorMessage);
           if (prev === ''){
-            document.getElementById('header').innerHTML = 'network error';            
+            document.getElementById('header').innerHTML = 'network error';
           }
+          setTimeout(getqr, 5000);
         }
       });
-      setTimeout(getqr, 300000);
     }
     getqr();
 
