@@ -3,7 +3,8 @@ Proof of Life QR that proves you are still alive at a certain moment using the l
 Use this for taken photos or your original T-shirts.
 
 This project is inspired by Julian Paul Assange:
-https://www.google.co.jp/search?q=Julian+Paul+Assange+proof+of+life&oq=Julian+Paul+Assange+proof+of+life&aqs=chrome..69i57.3179j0j1&sourceid=chrome&ie=UTF-8
+
+https://www.google.co.jp/search?q=Julian+Paul+Assange+proof+of+life
 
 # DEMO (optimized for smartphone browsers):
 
