@@ -41,7 +41,7 @@
         error : function ( request, errorMessage ) {
           console.log('Network error. Reconnecting.. ' + errorMessage);
           if (prev === ''){
-            document.getElementById('header').innerHTML = 'network error';
+            document.getElementById('header').innerHTML = 'Network error. Reconnecting.. ';
           }
           setTimeout(getqr, 5000);
         }
