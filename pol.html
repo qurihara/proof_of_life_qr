@@ -40,9 +40,9 @@
           }
         },
         error : function ( request, errorMessage ) {
-          console.log('Network error. Reconnecting.. ' + errorMessage);
+          // console.log('Network error. Reconnecting.. ' + errorMessage);
           if (prev === ''){
-            document.getElementById('header').innerHTML = 'Network error. Reconnecting.. ';
+            document.getElementById('header').innerHTML = 'Network error. Rconnecting.. ';
           }
           setTimeout(getqr, 5000);
         }
